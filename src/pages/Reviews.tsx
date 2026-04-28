@@ -21,32 +21,16 @@ const reviews = [
     logo: reviewdevidlogo
   },
   { 
-    name: "Christopher Anderson", 
-    role: "Patel & Co. Law Firm", 
-    text: "As a law firm, establishing a strong online presence is essential, and Technolabz has been instrumental in helping us achieve that goal. Their team's expertise in SEO and online marketing has significantly increased our website traffic and client inquiries. From keyword research to content optimization, their strategic approach has delivered tangible results. Technolabz is a trusted partner, and I highly recommend their services to any business looking to grow online." 
-  },
-  { 
     name: "David Rodriguez", 
     role: "Thompson & Co. Real Estate", 
     text: "I can't speak highly enough of Technolabz. Their strategic approach to SEO and digital marketing has been instrumental in our company's success. They took the time to understand our unique needs and crafted a tailored strategy that has consistently driven results. Thanks to their efforts, we've seen a substantial increase in leads and conversions. Technolabz is the real deal, and I wouldn't hesitate to recommend them to anyone in need of digital marketing expertise.",
     image: devidrodriguez
   },
   { 
-    name: "S. Thompson", 
-    role: "Turner's Tech Solutions", 
-    text: "Technolabz has been an invaluable asset to our tech company. Their deep understanding of SEO and digital marketing has helped us reach our target audience and drive conversions. Their team's proactive approach and attention to detail have made a significant impact on our online visibility and brand awareness. Thanks to Technolabz, our company has experienced steady growth, and I would highly recommend their services to anyone looking to expand their online presence." 
-  },
-  { 
     name: "Ryan Martinez", 
     role: "Cooper's Car Repair Shop", 
     text: "Technolabz has been an invaluable partner for our auto repair business. Their expertise in SEO and online marketing has helped us stay ahead of the competition and attract more customers than ever before. From optimizing our website to managing our social media presence, their team's attention to detail and commitment to excellence shine through in everything they do. Thanks to Technolabz, our business has seen significant growth, and I can't recommend them enough to others in need of digital marketing services.",
     image: ryanmartinez
-  },
-  { 
-    name: "William Thompson", 
-    role: "Atlanta, Georgia", 
-    text: "From the moment I contacted them for a consultation, their team exhibited professionalism and a commitment to excellence. They listened attentively to my ideas and preferences, offering valuable insights and creative solutions every step of the way. The result is a beautifully designed landscape that perfectly complements my home and exceeds my expectations. I'm thrilled with the outcome and grateful for GreenScape's dedication to bringing my vision to life.",
-    image: williamthompson
   },
   { 
     name: "S. Thompson", 
@@ -56,11 +40,25 @@ const reviews = [
     logo: sthompsonlogo
   },
   { 
+    name: "Christopher Anderson", 
+    role: "Patel & Co. Law Firm", 
+    text: "As a law firm, establishing a strong online presence is essential, and Technolabz has been instrumental in helping us achieve that goal. Their team's expertise in SEO and online marketing has significantly increased our website traffic and client inquiries. From keyword research to content optimization, their strategic approach has delivered tangible results. Technolabz is a trusted partner, and I highly recommend their services to any business looking to grow online." 
+  },
+  { 
+    name: "S. Thompson", 
+    role: "Turner's Tech Solutions", 
+    text: "Technolabz has been an invaluable asset to our tech company. Their deep understanding of SEO and digital marketing has helped us reach our target audience and drive conversions. Their team's proactive approach and attention to detail have made a significant impact on our online visibility and brand awareness. Thanks to Technolabz, our company has experienced steady growth, and I would highly recommend their services to anyone looking to expand their online presence." 
+  },
+  { 
+    name: "William Thompson", 
+    role: "Atlanta, Georgia", 
+    text: "From the moment I contacted them for a consultation, their team exhibited professionalism and a commitment to excellence. They listened attentively to my ideas and preferences, offering valuable insights and creative solutions every step of the way. The result is a beautifully designed landscape that perfectly complements my home and exceeds my expectations. I'm thrilled with the outcome and grateful for GreenScape's dedication to bringing my vision to life.",
+    image: williamthompson
+  },
+  { 
     name: "S. Thompson", 
     role: "Ramirez Fitness Studio", 
     text: "Technolabz has been a game-changer for our fitness studio. Their expertise in SEO and digital marketing has helped us attract new clients and grow our business. Their team's strategic approach to keyword research and content optimization has resulted in a noticeable increase in website traffic and inquiries. I'm incredibly impressed with their professionalism and dedication to our success. I highly recommend Technolabz to any business looking to enhance their online presence.",
-    image: sthompson,
-    logo: sthompsonlogo
   },
   { 
     name: "Benjamin Davis", 
@@ -80,14 +78,14 @@ const Reviews = () => {
       >
         {reviews.map((r, i) => (
           <div 
-            key={r.name} 
+            key={`${r.name}-${i}`} 
             className="group p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl glass-card glow-border-hover transition-all duration-700 bg-white/20 hover:bg-white/30 relative"
           >
             {r.logo && (
               <img 
                 src={r.logo} 
                 alt="Company Logo"
-                className="absolute top-4 right-4 w-12 h-12 object-contain"
+                className="absolute top-3 right-3 w-8 h-8 sm:top-4 sm:right-4 sm:w-12 sm:h-12 object-contain"
               />
             )}
             <div className="flex gap-1 mb-3 sm:mb-4">

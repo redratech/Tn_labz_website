@@ -290,7 +290,7 @@ const Testimonials = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {reviews.map((r, i) => (
             <div 
-              key={r.name} 
+              key={`${r.name}-${i}`} 
               className="p-8 rounded-3xl glass-card glow-border-hover transition-all duration-700"
               style={{ 
                 opacity: Math.min(Math.max(progress - 0.3 - (i * 0.08), 0) * 2, 1),
