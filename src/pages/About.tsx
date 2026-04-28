@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import { Target, Eye, Sparkles, Shield, Star, Heart, ChevronDown } from "lucide-react";
+import LetsTalk from "@/components/LetsTalk";
+import { Target, Heart, Sparkles, Star, ChevronDown } from "lucide-react";
 import { useProgressiveScroll } from "@/hooks/useScrollAnimation";
 import { useState } from "react";
 import team from "@/assets/team.jpg";
@@ -9,8 +10,6 @@ import venkat from "@/assets/venkat.jpg";
 const About = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const missionSection = useProgressiveScroll();
-  const valuesSection = useProgressiveScroll();
-  const teamSection = useProgressiveScroll();
 
   const toggleSection = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -253,120 +252,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Statistics/Achievements Section */}
-      <section 
-        ref={teamSection.ref}
-        className="container py-16"
-      >
-        <div 
-          className="text-center mb-12"
-          style={{ 
-            opacity: teamSection.isVisible ? Math.min(teamSection.progress * 2, 1) : 0,
-            transform: `translateY(${teamSection.isVisible ? (1 - teamSection.progress) * 30 : 30}px)`
-          }}
-        >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Our <span className="text-gradient-orange">Achievements</span>
-          </h2>
-          <p className="text-foreground/80 max-w-2xl mx-auto">
-            Numbers that reflect our commitment to excellence and client success
-          </p>
-        </div>
+      <LetsTalk />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { number: "50+", label: "Projects Delivered", icon: Target },
-            { number: "20+", label: "Happy Clients", icon: Heart },
-            { number: "5+", label: "Years Experience", icon: Sparkles },
-            { number: "15+", label: "Team Members", icon: Star }
-          ].map((stat, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-primary/30 transition-all duration-700"
-              style={{ 
-                opacity: teamSection.isVisible ? Math.min(Math.max(teamSection.progress - 0.1 - (index * 0.05), 0) * 2, 1) : 0,
-                transform: `translateY(${teamSection.isVisible ? (1 - teamSection.progress) * 40 : 40}px)`,
-                transitionDelay: `${index * 100}ms`
-              }}
-            >
-              <div className="w-14 h-14 mx-auto rounded-2xl bg-gradient-orange flex items-center justify-center mb-4 orange-glow">
-                <stat.icon className="w-6 h-6 text-background" />
-              </div>
-              <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2">
-                {stat.number}
-              </h3>
-              <p className="text-foreground/70 text-sm">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section 
-        ref={valuesSection.ref}
-        className="container py-16"
-      >
-        <div 
-          className="p-10 rounded-3xl glass-card glow-border-hover transition-all duration-700"
-          style={{ 
-            opacity: missionSection.isVisible ? Math.min(missionSection.progress * 2, 1) : 0,
-            transform: `translateY(${missionSection.isVisible ? (1 - missionSection.progress) * 30 : 30}px)`
-          }}
-        >
-          <Target className="w-10 h-10 text-primary mb-6" />
-          <h3 className="text-2xl font-display font-semibold mb-3">Mission</h3>
-          <p className="text-muted-foreground">Empower businesses through intelligent, scalable automation that frees teams to do their best work.</p>
-        </div>
-        <div 
-          className="p-10 rounded-3xl glass-card glow-border-hover transition-all duration-700"
-          style={{ 
-            opacity: missionSection.isVisible ? Math.min(Math.max(missionSection.progress - 0.1, 0) * 2.5, 1) : 0,
-            transform: `translateY(${missionSection.isVisible ? (1 - missionSection.progress) * 40 : 40}px)`,
-            transitionDelay: '100ms'
-          }}
-        >
-          <Eye className="w-10 h-10 text-primary mb-6" />
-          <h3 className="text-2xl font-display font-semibold mb-3">Vision</h3>
-          <p className="text-muted-foreground">Lead future of AI-driven enterprises — where every workflow is augmented, every decision is informed.</p>
-        </div>
-      </section>
-
-      <section 
-        ref={valuesSection.ref}
-        className="container py-16"
-      >
-        <div 
-          className="text-center mb-14"
-          style={{ 
-            opacity: valuesSection.isVisible ? Math.min(valuesSection.progress * 2, 1) : 0,
-            transform: `translateY(${valuesSection.isVisible ? (1 - valuesSection.progress) * 30 : 30}px)`
-          }}
-        >
-          <h2 className="text-4xl md:text-5xl font-display font-bold">Our <span className="text-gradient-orange">Values</span></h2>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { icon: Sparkles, title: "Innovation" },
-            { icon: Shield, title: "Trust" },
-            { icon: Star, title: "Excellence" },
-            { icon: Heart, title: "Customer Focus" },
-          ].map((v, i) => (
-            <div 
-              key={v.title} 
-              className="p-8 rounded-3xl glass text-center glow-border-hover transition-all duration-700"
-              style={{ 
-                opacity: valuesSection.isVisible ? Math.min(Math.max(valuesSection.progress - 0.2 - (i * 0.05), 0) * 2, 1) : 0,
-                transform: `translateY(${valuesSection.isVisible ? (1 - valuesSection.progress) * 40 : 40}px)`,
-                transitionDelay: `${i * 100}ms`
-              }}
-            >
-              <div className="w-14 h-14 mx-auto rounded-2xl bg-gradient-orange flex items-center justify-center mb-4 orange-glow">
-                <v.icon className="w-6 h-6 text-background" />
-              </div>
-              <h4 className="font-display font-semibold">{v.title}</h4>
-            </div>
-          ))}
-        </div>
-      </section>
     </Layout>
   );
 };

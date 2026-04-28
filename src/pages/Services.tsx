@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
+import LetsTalk from "@/components/LetsTalk";
 import { ArrowRight, Bot, Brain, Cloud, Layers, Rocket, Share2, User, MessageCircle, HeartHandshake, Atom } from "lucide-react";
 import { useProgressiveScroll } from "@/hooks/useScrollAnimation";
 
@@ -150,6 +151,8 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      <LetsTalk />
 
     </Layout>
   );

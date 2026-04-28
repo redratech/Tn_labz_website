@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
+import LetsTalk from "@/components/LetsTalk";
 import { Star } from "lucide-react";
-import { useProgressiveScroll } from "@/hooks/useScrollAnimation";
 
 const reviews = [
   { 
@@ -57,24 +57,16 @@ const reviews = [
 ];
 
 const Reviews = () => {
-  const reviewsSection = useProgressiveScroll();
-  
   return (
     <Layout>
       <PageHero eyebrow="Reviews" title="Check Our Works With Real Results" subtitle="Stories from the operators and founders we've helped automate." />
       <section 
-        ref={reviewsSection.ref}
         className="container py-12 grid md:grid-cols-2 gap-6"
       >
         {reviews.map((r, i) => (
           <div 
             key={r.name} 
             className="group p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl glass-card glow-border-hover transition-all duration-700 bg-white/20 hover:bg-white/30"
-            style={{ 
-              opacity: reviewsSection.isVisible ? Math.min(reviewsSection.progress * 1.5, 1) : 0,
-              transform: `translateY(${reviewsSection.isVisible ? (1 - reviewsSection.progress) * 30 : 30}px)`,
-              transitionDelay: `${i * 50}ms`
-            }}
           >
             <div className="flex gap-1 mb-3 sm:mb-4">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -94,6 +86,8 @@ const Reviews = () => {
           </div>
         ))}
       </section>
+
+      <LetsTalk />
     </Layout>
   );
 };

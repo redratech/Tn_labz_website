@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import tnlabz from "@/assets/tnlabz.jpg";
+import tnlabz from "@/assets/tnlabz logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -16,9 +16,13 @@ const links = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hideLogo, setHideLogo] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+      setHideLogo(window.scrollY > 600);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -33,7 +37,19 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between gap-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
+        <Link to="/" className={cn("flex items-center gap-2 group transition-opacity duration-500", "lg:hidden", hideLogo ? "opacity-0 pointer-events-none" : "opacity-100")}>
+          <div className="relative">
+            <img 
+              src={tnlabz} 
+              alt="TN Labz" 
+              className="w-10 h-10 rounded-xl object-cover transition-transform group-hover:scale-110"
+            />
+          </div>
+          <span className="font-display font-bold text-xl tracking-tight">
+            TN <span className="text-gradient-orange">Labz</span>
+          </span>
+        </Link>
+        <Link to="/" className={cn("hidden lg:flex items-center gap-2 group")}>
           <div className="relative">
             <img 
               src={tnlabz} 
