@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import LetsTalk from "@/components/LetsTalk";
 import FaqSection from "@/components/FaqSection";
 import { Target, Heart, Sparkles, Star, ChevronDown } from "lucide-react";
-import { useProgressiveScroll } from "@/hooks/useScrollAnimation";
+import { useProgressiveScroll, useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useState, useEffect, useRef } from "react";
 import team from "@/assets/team.jpg";
 import venkat from "@/assets/venkat.jpg";
@@ -121,7 +121,7 @@ const ScrollLeftToRight = () => {
 
 const About = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const missionSection = useProgressiveScroll();
+  const missionSection = useScrollAnimation(0.2);
 
   const toggleSection = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -303,8 +303,9 @@ const About = () => {
         <div 
           className="text-center mb-12"
           style={{ 
-            opacity: missionSection.isVisible ? Math.min(missionSection.progress * 2, 1) : 0,
-            transform: `translateY(${missionSection.isVisible ? (1 - missionSection.progress) * 30 : 30}px)`
+            opacity: missionSection.isVisible ? 1 : 0,
+            transform: `translateY(${missionSection.isVisible ? 0 : 30}px)`,
+            transition: 'all 0.8s cubic-bezier(0.22, 1, 0.36, 1)'
           }}
         >
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
@@ -342,8 +343,9 @@ const About = () => {
               key={index}
               className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all duration-700"
               style={{ 
-                opacity: missionSection.isVisible ? Math.min(Math.max(missionSection.progress - 0.1 - (index * 0.1), 0) * 2, 1) : 0,
-                transform: `translateY(${missionSection.isVisible ? (1 - missionSection.progress) * 40 : 40}px)`,
+                opacity: missionSection.isVisible ? 1 : 0,
+                transform: `translateY(${missionSection.isVisible ? 0 : 40}px)`,
+                transition: 'all 0.8s cubic-bezier(0.22, 1, 0.36, 1)',
                 transitionDelay: `${index * 150}ms`
               }}
             >

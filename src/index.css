@@ -12,9 +12,9 @@
   :root {
     /* Core palette */
     --background: 0 0% 4%;              /* #0B0B0B matte black */
-    --foreground: 0 0% 100%;             /* white */
+    --foreground: 0 0% 98%;             /* slightly off-white for better contrast */
 
-    --card: 0 0% 7%;
+    --card: 0 0% 8%;                /* slightly darker for cards */
     --card-foreground: 0 0% 100%;
 
     --popover: 0 0% 5%;
@@ -145,6 +145,28 @@
   @keyframes fade-up {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Mobile scroll fixes */
+  @media (max-width: 768px) {
+    html {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    body {
+      overflow-x: hidden;
+    }
+    
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .review-card {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
   }
 
   .ring-pulse::after {
