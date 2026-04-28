@@ -134,7 +134,7 @@ const WhyUs = () => {
   return (
   <section className="relative overflow-hidden">
     {/* === STATS BLOCK with background image === */}
-    <div className="relative py-24 md:py-32">
+    <div className="relative py-16 md:py-20">
       <img
         src={team}
         alt=""
@@ -165,7 +165,7 @@ const WhyUs = () => {
     </div>
 
     {/* === FEATURE CARDS === */}
-    <div className="relative py-20">
+    <div className="relative py-12">
       <div className="container">
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {features.map((f) => (
@@ -201,7 +201,7 @@ const WhyUs = () => {
     </div>
 
     {/* === TESTIMONIALS with watermark === */}
-    <div className="relative py-24 overflow-hidden min-h-[600px]">
+    <div className="relative py-16 overflow-hidden min-h-[500px]">
       {/* huge watermark - contained within testimonial section only */}
       <div
         aria-hidden

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Play, ArrowRight, Bot, Brain, Cloud, Sparkles, Shield, Zap, Headphones, Layers, Rocket, Star } from "lucide-react";
+import { Play, ArrowRight, Bot, Brain, Cloud, Sparkles, Shield, Zap, Headphones, Layers, Rocket, Star, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import Layout from "@/components/Layout";
 import Offering from "@/components/Offering";
@@ -14,7 +14,10 @@ import heroAi from "@/assets/hero-ai.jpg";
 import wave from "@/assets/wave.jpg";
 
 /* ------------------ HERO ------------------ */
-const Hero = () => (
+const Hero = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  return (
   <section className="relative overflow-hidden pt-8 pb-20 md:pb-32">
     {/* glow */}
     <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-gradient-radial-orange opacity-50 blur-3xl pointer-events-none" />
@@ -53,7 +56,10 @@ const Hero = () => (
               Get Started
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <button className="group inline-flex items-center gap-3 text-foreground hover:text-primary transition">
+            <button 
+              onClick={() => setShowVideo(true)}
+              className="group inline-flex items-center gap-3 text-foreground hover:text-primary transition"
+            >
               <span className="relative w-12 h-12 rounded-full glass flex items-center justify-center ring-pulse">
                 <Play className="w-4 h-4 fill-primary text-primary translate-x-0.5" />
               </span>
@@ -81,8 +87,35 @@ const Hero = () => (
         </div>
       </div>
     </div>
+
+    {/* Video Modal */}
+    {showVideo && (
+      <div 
+        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        onClick={() => setShowVideo(false)}
+      >
+        <div 
+          className="relative w-full max-w-4xl aspect-video"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            onClick={() => setShowVideo(false)}
+            className="absolute -top-12 right-0 text-white hover:text-primary transition"
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <iframe
+            src="https://www.youtube.com/embed/WwlDeInYwf4?autoplay=1"
+            className="w-full h-full rounded-lg"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    )}
   </section>
-);
+  );
+};
 
 
 
@@ -99,7 +132,7 @@ const WhyChooseUs = () => {
   const { ref, progress, isVisible } = useProgressiveScroll();
   
   return (
-    <section ref={ref} className="relative py-24 overflow-hidden">
+    <section ref={ref} className="relative py-16 overflow-hidden">
       <img src={wave} alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" loading="lazy" />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
 
@@ -198,7 +231,7 @@ const Stats = () => {
   const { ref, progress, isVisible } = useProgressiveScroll();
   
   return (
-    <section ref={ref} className="relative py-24">
+    <section ref={ref} className="relative py-16">
       <div 
         className="container grid grid-cols-2 lg:grid-cols-4 gap-6"
         style={{ 
@@ -226,7 +259,7 @@ const Testimonials = () => {
   const { ref, progress, isVisible } = useProgressiveScroll();
   
   return (
-    <section ref={ref} className="relative py-24">
+    <section ref={ref} className="relative py-16">
       <div className="container">
         <div 
           className="text-center max-w-2xl mx-auto mb-16"

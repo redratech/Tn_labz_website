@@ -1,11 +1,123 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import LetsTalk from "@/components/LetsTalk";
+import FaqSection from "@/components/FaqSection";
 import { Target, Heart, Sparkles, Star, ChevronDown } from "lucide-react";
 import { useProgressiveScroll } from "@/hooks/useScrollAnimation";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import team from "@/assets/team.jpg";
 import venkat from "@/assets/venkat.jpg";
+import azure from "@/assets/azure.avif";
+import cloud from "@/assets/cloud.png";
+import dynamic from "@/assets/dynamic.png";
+import microsoft from "@/assets/microsoft.jpeg";
+import sap from "@/assets/sap.png";
+import sky from "@/assets/sky.avif";
+
+const brandLogos = [
+  { src: sap, alt: "SAP" },
+  { src: azure, alt: "Microsoft Azure" },
+  { src: cloud, alt: "Cloud" },
+  { src: dynamic, alt: "Dynamic" },
+  { src: microsoft, alt: "Microsoft" },
+  { src: sky, alt: "Sky" },
+];
+
+const ScrollRightToLeft = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let scrollPosition = 0;
+    const scrollSpeed = 1;
+
+    const animate = () => {
+      scrollPosition -= scrollSpeed;
+      
+      if (scrollPosition <= -scrollContainer.scrollWidth / 2) {
+        scrollPosition = 0;
+      }
+      
+      scrollContainer.style.transform = `translateX(${scrollPosition}px)`;
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+  }, []);
+
+  return (
+    <div className="relative overflow-hidden w-full">
+      <div 
+        ref={scrollRef}
+        className="flex gap-8"
+        style={{ width: 'fit-content' }}
+      >
+        {[...brandLogos, ...brandLogos].map((brand, i) => (
+          <div
+            key={`rtl-${brand.alt}-${i}`}
+            className="flex-shrink-0 px-8 py-6 min-w-[140px] rounded-2xl glass-card glow-border-hover flex items-center justify-center"
+          >
+            <img 
+              src={brand.src} 
+              alt={brand.alt}
+              className="h-12 w-auto object-contain"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const ScrollLeftToRight = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let scrollPosition = -scrollContainer.scrollWidth / 2;
+    const scrollSpeed = 1;
+
+    const animate = () => {
+      scrollPosition += scrollSpeed;
+      
+      if (scrollPosition >= 0) {
+        scrollPosition = -scrollContainer.scrollWidth / 2;
+      }
+      
+      scrollContainer.style.transform = `translateX(${scrollPosition}px)`;
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+  }, []);
+
+  return (
+    <div className="relative overflow-hidden w-full">
+      <div 
+        ref={scrollRef}
+        className="flex gap-8"
+        style={{ width: 'fit-content' }}
+      >
+        {[...brandLogos, ...brandLogos].map((brand, i) => (
+          <div
+            key={`ltr-${brand.alt}-${i}`}
+            className="flex-shrink-0 px-8 py-6 min-w-[140px] rounded-2xl glass-card glow-border-hover flex items-center justify-center"
+          >
+            <img 
+              src={brand.src} 
+              alt={brand.alt}
+              className="h-12 w-auto object-contain"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const About = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -59,7 +171,7 @@ const About = () => {
       </section>
 
       {/* Who We Are Section */}
-      <section className="container py-16">
+      <section className="container py-10">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Company Info (Fixed) */}
           <div className="lg:sticky lg:top-24">
@@ -69,8 +181,8 @@ const About = () => {
             <h3 className="text-xl md:text-2xl font-semibold text-primary mb-6">
               About our Company
             </h3>
-            <p className="text-foreground/90 leading-relaxed mb-6">
-              Welcome to Technolabz Business Solutions—your trusted partner in driving business transformation through innovative technology. We are dedicated to empowering enterprises with cutting-edge solutions that streamline operations, enhance customer experiences, and accelerate growth. Our mission is to bridge the gap between emerging technologies and practical business applications, ensuring your organization stays ahead in an ever-evolving digital landscape.
+            <p className="text-foreground/90 leading-relaxed mb-6 text-justify">
+              Welcome to Technolabz Business Solutions-your trusted partner in driving business transformation through innovative technology. We are dedicated to empowering enterprises with cutting-edge solutions that streamline operations, enhance customer experiences, and accelerate growth. Our mission is to bridge the gap between emerging technologies and practical business applications, ensuring your organization stays ahead in an ever-evolving digital landscape.
             </p>
           </div>
 
@@ -103,7 +215,7 @@ const About = () => {
                 </button>
                 {openIndex === index && (
                   <div className="px-6 pb-5 pt-0">
-                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line text-justify">
                       {info.content}
                     </p>
                   </div>
@@ -134,19 +246,19 @@ const About = () => {
               className="w-full h-auto rounded-2xl object-cover max-h-[400px]"
               loading="lazy"
             />
-            <p className="text-center mt-4 text-xl font-display font-bold text-foreground">
+            <p className="text-center mt-4 text-2xl font-semibold text-primary">
               Venkatesh
             </p>
           </div>
 
           {/* Right Side - Founder Info */}
           <div className="order-1 lg:order-2 space-y-4">
-            <p className="text-foreground/90 leading-relaxed text-xs md:text-sm">
-              Venkatesh is the heart of Technolabz Business Solutions—a visionary leader whose decades of expertise in advanced technology have propelled our transformative journey. His passion for innovation and commitment to client success have been instrumental in shaping our identity as a leader in the digital landscape.
+            <p className="text-foreground/90 leading-relaxed text-justify">
+              Venkatesh is the heart of Technolabz Business Solutions-a visionary leader whose decades of expertise in advanced technology have propelled our transformative journey. His passion for innovation and commitment to client success have been instrumental in shaping our identity as a leader in the digital landscape.
             </p>
             
-            <p className="text-foreground/80 leading-relaxed text-xs md:text-sm">
-              Venkatesh is known for his hands-on leadership and his commitment to continuous learning and innovation. He inspires his team to think creatively and challenge the status quo, ensuring that every solution is tailored to meet the dynamic needs of today's enterprises. His forward-thinking approach and unwavering dedication to excellence continue to drive the company's mission—empowering businesses to thrive in a rapidly evolving digital era.
+            <p className="text-foreground/80 leading-relaxed text-justify">
+              Venkatesh is known for his hands-on leadership and his commitment to continuous learning and innovation. He inspires his team to think creatively and challenge the status quo, ensuring that every solution is tailored to meet the dynamic needs of today's enterprises. His forward-thinking approach and unwavering dedication to excellence continue to drive the company's mission-empowering businesses to thrive in a rapidly evolving digital era.
             </p>
 
             {/* Founder Qualities */}
@@ -244,13 +356,37 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-display font-bold mb-3">{item.title}</h4>
-                  <p className="text-foreground/80 leading-relaxed text-sm">{item.description}</p>
+                  <p className="text-foreground/80 leading-relaxed text-sm text-justify">{item.description}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </section>
+
+      {/* Brands Section */}
+      <section className="container py-10">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
+            Brands
+          </h2>
+          <h3 className="text-2xl md:text-3xl font-semibold text-primary">
+            OUR PARTNERS
+          </h3>
+        </div>
+
+        {/* First Row - Right to Left Scroll */}
+        <div className="mb-8">
+          <ScrollRightToLeft />
+        </div>
+
+        {/* Second Row - Left to Right Scroll */}
+        <div>
+          <ScrollLeftToRight />
+        </div>
+      </section>
+
+      <FaqSection />
 
       <LetsTalk />
 

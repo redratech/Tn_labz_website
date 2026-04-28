@@ -79,7 +79,7 @@ const Services = () => {
       {/* Services */}
       <section 
         ref={servicesSection.ref}
-        className="container py-16 md:py-24"
+        className="container py-10 md:py-16"
       >
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((s, i) => (
@@ -109,7 +109,7 @@ const Services = () => {
       </section>
 
       {/* ✅ NEW Why Choose Us Section */}
-      <section className="relative py-20 md:py-28 bg-black text-white overflow-hidden">
+      <section className="relative py-12 md:py-16 bg-black text-white overflow-hidden">
         
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:40px_40px]" />

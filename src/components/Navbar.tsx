@@ -21,7 +21,7 @@ const Navbar = () => {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
-      setHideLogo(window.scrollY > 600);
+      setHideLogo(window.scrollY > 400);
     };
     onScroll();
     window.addEventListener("scroll", onScroll);
@@ -36,19 +36,21 @@ const Navbar = () => {
       )}
     >
       <div className="container flex items-center justify-between gap-4">
-        {/* Logo */}
-        <Link to="/" className={cn("flex items-center gap-2 group transition-opacity duration-500", "lg:hidden", hideLogo ? "opacity-0 pointer-events-none" : "opacity-100")}>
-          <div className="relative">
-            <img 
-              src={tnlabz} 
-              alt="TN Labz" 
-              className="w-10 h-10 rounded-xl object-cover transition-transform group-hover:scale-110"
-            />
-          </div>
-          <span className="font-display font-bold text-xl tracking-tight">
-            TN <span className="text-gradient-orange">Labz</span>
-          </span>
-        </Link>
+        {/* Logo - Mobile */}
+        <div className={cn("flex items-center", "lg:hidden")}>
+          <Link to="/" className={cn("flex items-center gap-2 group transition-all duration-500", hideLogo ? "w-0 opacity-0 overflow-hidden" : "opacity-100")}>
+            <div className="relative flex-shrink-0">
+              <img 
+                src={tnlabz} 
+                alt="TN Labz" 
+                className="w-10 h-10 rounded-xl object-cover transition-transform group-hover:scale-110"
+              />
+            </div>
+            <span className="font-display font-bold text-xl tracking-tight whitespace-nowrap">
+              TN <span className="text-gradient-orange">Labz</span>
+            </span>
+          </Link>
+        </div>
         <Link to="/" className={cn("hidden lg:flex items-center gap-2 group")}>
           <div className="relative">
             <img 

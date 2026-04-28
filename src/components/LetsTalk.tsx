@@ -15,7 +15,7 @@ const LetsTalk = () => {
   };
 
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden">
+    <section className="relative py-12 md:py-16 overflow-hidden">
       {/* subtle vertical line pattern */}
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"

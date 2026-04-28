@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const BlogsSection = () => {
   return (
-    <section className="relative py-20 md:py-28 bg-background">
+    <section className="relative py-12 md:py-16 bg-background">
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
           {/* BLOGS tag */}

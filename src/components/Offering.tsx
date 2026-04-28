@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
 import { Bot, Layers, Cloud, Brain, ArrowUpRight } from "lucide-react";
+import { useEffect, useRef } from "react";
+import azure from "@/assets/azure.avif";
+import cloud from "@/assets/cloud.png";
+import dynamic from "@/assets/dynamic.png";
+import microsoft from "@/assets/microsoft.jpeg";
+import sap from "@/assets/sap.png";
+import sky from "@/assets/sky.avif";
 
 const offerings = [
   {
@@ -28,10 +35,55 @@ const offerings = [
   },
 ];
 
-const brands = ["SAP", "CLOUDBIX", "Microsoft", "Microsoft Azure", "SharePoint", "MS Partner", "SAP One", "CLOUDBIX"];
+const brandLogos = [
+  { src: sap, alt: "SAP" },
+  { src: azure, alt: "Microsoft Azure" },
+  { src: cloud, alt: "Cloud" },
+  { src: dynamic, alt: "Dynamic" },
+  { src: microsoft, alt: "Microsoft" },
+  { src: sky, alt: "Sky" },
+];
+
+const ScrollAnimation = ({ children }: { children: React.ReactNode }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let scrollPosition = 0;
+    const scrollSpeed = 1; // pixels per frame
+
+    const animate = () => {
+      scrollPosition -= scrollSpeed;
+      
+      // Reset when scrolled halfway (for infinite loop)
+      if (scrollPosition <= -scrollContainer.scrollWidth / 2) {
+        scrollPosition = 0;
+      }
+      
+      scrollContainer.style.transform = `translateX(${scrollPosition}px)`;
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+  }, []);
+
+  return (
+    <div className="relative overflow-hidden w-full">
+      <div 
+        ref={scrollRef}
+        className="flex gap-8"
+        style={{ width: 'fit-content' }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
 
 const Offering = () => (
-  <section className="relative py-24 overflow-hidden">
+  <section className="relative py-16 overflow-hidden">
     {/* Subtle arch pattern background */}
     <div
       className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -104,20 +156,20 @@ const Offering = () => (
           Brands that <span className="text-gradient-orange">trust us</span>
         </h3>
 
-        <div className="relative overflow-hidden">
-          <div className="flex gap-4 flex-wrap justify-center">
-            {brands.map((b, i) => (
-              <div
-                key={`${b}-${i}`}
-                className="px-8 py-6 min-w-[140px] rounded-2xl glass-card glow-border-hover flex items-center justify-center"
-              >
-                <span className="text-sm font-display font-bold tracking-widest text-foreground/80">
-                  {b}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <ScrollAnimation>
+          {[...brandLogos, ...brandLogos].map((brand, i) => (
+            <div
+              key={`${brand.alt}-${i}`}
+              className="flex-shrink-0 px-8 py-6 min-w-[140px] rounded-2xl glass-card glow-border-hover flex items-center justify-center"
+            >
+              <img 
+                src={brand.src} 
+                alt={brand.alt}
+                className="h-12 w-auto object-contain"
+              />
+            </div>
+          ))}
+        </ScrollAnimation>
       </div>
     </div>
   </section>

@@ -11,7 +11,7 @@ const PageHero = ({
   subtitle?: string;
   className?: string;
 }) => (
-  <section className={cn("relative overflow-hidden py-20 md:py-28", className)}>
+  <section className={cn("relative overflow-hidden py-12 md:py-16", className)}>
     <div className="absolute inset-0 bg-gradient-radial-orange opacity-40 blur-3xl" />
     <div className="container relative text-center max-w-4xl">
       {eyebrow && (

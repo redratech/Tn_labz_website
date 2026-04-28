@@ -1,19 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { Atom } from "lucide-react";
-import cosmic from "@/assets/cosmic-orange.jpg";
+import innovatebg from "@/assets/innovatebg.avif";
 
 const values = [
-  { label: "Customer Support", x: -15, y: -15, rot: -10 },
-  { label: "Passion", x: 15, y: -12, rot: 10 },
-  { label: "Positive Experience", x: -18, y: -4, rot: -8 },
-  { label: "Trustworthiness", x: 18, y: 2, rot: 8 },
-  { label: "Customer Focus", x: -14, y: 8, rot: -5 },
-  { label: "Long-Term Relationships", x: 12, y: 10, rot: 5 },
-  { label: "Innovation", x: -12, y: 15, rot: -6 },
-  { label: "Collaboration", x: 14, y: 16, rot: 8 },
-  { label: "Personalization", x: -10, y: 20, rot: -10 },
-  { label: "Reliability", x: 10, y: 21, rot: 6 },
-  { label: "Quality", x: 0, y: 22, rot: 0 },
+  { label: "Customer Support", x: -22, y: -12, rot: -15 },
+  { label: "Passion", x: 14, y: -10, rot: 12 },
+  { label: "Positive Experience", x: 59, y: 100, rot: 90 },
+  { label: "Trustworthiness", x: 17, y: 2, rot: 8 },
+  { label: "Customer Focus", x: -70, y: 50, rot: -80 },
+  { label: "Long-Term Relationships", x: 15, y: -280, rot: 6 },
+  { label: "Innovation", x: -13, y: -170, rot: 10 },
+  { label: "Collaboration", x: 14, y: 100, rot: 10 },
+  { label: "Personalization", x: -12, y: 160, rot: -15 },
+  { label: "Reliability", x: 13, y: 270, rot: 8 },
+  { label: "Quality", x: 10, y: 350, rot: 0 },
 ];
 
 /* Animated counter for percentage */
@@ -60,7 +60,7 @@ const InnovateSection = () => {
   }, []);
 
   return (
-    <section className="relative py-12 md:py-16">
+    <section className="relative py-8 md:py-10">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-4 lg:gap-6 items-stretch">
           {/* === LEFT: Cosmic card with animated word cluster === */}
@@ -69,7 +69,7 @@ const InnovateSection = () => {
             className="relative rounded-[2.5rem] overflow-hidden min-h-[400px] lg:min-h-[480px] border border-white/10"
           >
             <img
-              src={cosmic}
+              src={innovatebg}
               alt=""
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
@@ -80,9 +80,9 @@ const InnovateSection = () => {
 
             {/* Circular cluster container */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative w-[420px] h-[420px] md:w-[480px] md:h-[480px]">
-                {/* faint circle backdrop */}
-                <div className="absolute inset-0 rounded-full border border-white/10 backdrop-blur-[2px] bg-background/10" />
+              <div className="relative w-[350px] h-[350px] md:w-[400px] md:h-[400px]">
+                {/* prominent circle border */}
+                <div className="absolute inset-0 rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-background/20" />
                 <div className="absolute inset-8 rounded-full bg-gradient-radial-orange opacity-40 blur-3xl" />
 
                 {/* word pills */}
@@ -127,7 +127,7 @@ const InnovateSection = () => {
               </div>
             </div>
 
-            <p className="relative text-background/90 leading-relaxed text-sm md:text-base mt-6 max-w-xl">
+            <p className="relative text-background/90 leading-relaxed text-sm md:text-base mt-6 max-w-xl text-justify">
               At <span className="font-bold">TN Labz Business Solutions</span>, we recognized the
               importance of amplifying our digital footprint in a competitive technology landscape.
               In collaboration with our expert content team, we crafted a comprehensive strategy

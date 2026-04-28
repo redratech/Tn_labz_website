@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Youtube, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Youtube, Instagram, FileText } from "lucide-react";
 
 const menu = [
   { label: "Home", to: "/" },
@@ -21,12 +21,11 @@ const services = [
 ];
 
 const socials = [
-  { Icon: Facebook, label: "Facebook" },
-  { Icon: Twitter, label: "Twitter" },
-  { Icon: Linkedin, label: "LinkedIn" },
-  { Icon: Instagram, label: "Pinterest" },
-  { Icon: Youtube, label: "YouTube" },
-  { Icon: Instagram, label: "Instagram" },
+  { Icon: Facebook, label: "Facebook", url: "https://www.facebook.com/share/1937sbCx5c/" },
+  { Icon: Twitter, label: "Twitter", url: "https://x.com/technolabz25?t=RUzKMByU78ZZw_Xic0cLmg&s=09" },
+  { Icon: Linkedin, label: "LinkedIn", url: "https://www.linkedin.com/company/71977049/admin/page-posts/published/" },
+  { Icon: Instagram, label: "Instagram", url: "https://www.instagram.com/technolabzitsoln25?igsh=MWUxbnUzbzBuMjBqNQ==" },
+  { Icon: Youtube, label: "YouTube", url: "https://youtube.com/@technolabzitaoln25?si=d_EyKwcnvVL9j9NS" },
 ];
 
 const Footer = () => (
@@ -92,10 +91,12 @@ const Footer = () => (
       <div className="glass-card rounded-[2rem] p-10 text-center">
         <h4 className="font-display font-bold text-primary text-xl mb-6">Follow us:</h4>
         <div className="flex flex-wrap justify-center gap-4">
-          {socials.map(({ Icon, label }, i) => (
+          {socials.map(({ Icon, label, url }, i) => (
             <a
               key={i}
-              href="#"
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={label}
               className="w-14 h-14 rounded-full glass flex items-center justify-center hover:bg-gradient-orange hover:border-transparent hover:text-background transition-all duration-300"
             >
