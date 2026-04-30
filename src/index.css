@@ -4,6 +4,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Reduce paint operations */
+.glass-card {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* TN Labz — Dark Futuristic Design System
    All colors HSL. Orange = brand accent. Black = canvas.
 */
@@ -192,10 +219,17 @@
     html {
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
+      background: hsl(var(--background));
     }
 
     body {
       overflow-x: hidden;
+      background: hsl(var(--background));
+      min-height: 100vh;
+    }
+
+    main, section, .layout {
+      background: hsl(var(--background));
     }
 
     .container {
@@ -206,6 +240,18 @@
     .review-card {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
+    }
+
+    /* Prevent white gaps between sections */
+    section {
+      background: hsl(var(--background));
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Ensure no white background on scroll */
+    * {
+      -webkit-tap-highlight-color: transparent;
     }
   }
 

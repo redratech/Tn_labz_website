@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import tnlabz from "@/assets/tnnew.jpeg";
+import tnlabz from "@/assets/tnlabz rpa1.jpeg";
 
 const links = [
   { to: "/", label: "Home" },

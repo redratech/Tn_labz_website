@@ -17,7 +17,7 @@ const PageLoader = () => {
       setTimeout(() => {
         setIsLoading(false);
         setCurrentPath(window.location.pathname);
-      }, 300);
+      }, 100);
     };
 
     // Intercept navigation
@@ -52,14 +52,14 @@ const PageLoader = () => {
   if (!isLoading) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-orange-glowsm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm">
       <div className="relative">
         {/* Loader animation */}
         <div className="w-16 h-16 rounded-full border-4 border-white/20 border-t-orange-500 animate-spin"></div>
         
         {/* Logo in center */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-8 h-8 rounded-lg bg-text-gradient-orangeorange flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-gradient-orange flex items-center justify-center">
             <span className="text-background font-bold text-xs">TN</span>
           </div>
         </div>

@@ -24,7 +24,7 @@ const socials = [
   { Icon: Facebook, label: "Facebook", url: "https://www.facebook.com/share/1937sbCx5c/" },
   { Icon: Twitter, label: "Twitter", url: "https://x.com/technolabz25?t=RUzKMByU78ZZw_Xic0cLmg&s=09" },
   { Icon: Linkedin, label: "LinkedIn", url: "https://www.linkedin.com/company/71977049/admin/page-posts/published/" },
-  { Icon: Instagram, label: "Instagram", url: "https://www.instagram.com/technolabzitsoln25?igsh=MWUxbnUzbzBuMjBqNQ==" },
+  { Icon: Instagram, label: "Instagram", url: "https://www.instagram.com/technolabz?igsh=bnU1dDIxbHVwNWk2" },
   { Icon: Youtube, label: "YouTube", url: "https://youtube.com/@technolabzitaoln25?si=d_EyKwcnvVL9j9NS" },
 ];
 
