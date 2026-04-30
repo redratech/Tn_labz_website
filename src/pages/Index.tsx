@@ -41,7 +41,7 @@ const Hero = () => {
               <br />
               Services for
               <br />
-              <span className="text-gradient-blue">Businesses</span>
+              <span className="text-gradient-orange">Businesses</span>
             </h1>
             <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-10">
               Smart solutions for smarter businesses. Automate workflows, reduce costs,
@@ -159,7 +159,7 @@ const WhyChooseUs = () => {
               transform: `translateY(${Math.max((1 - progress) * 25, 0)}px)`
             }}
           >
-            The partner behind your <span className="text-gradient-blue">automation edge</span>
+            The partner behind your <span className="text-gradient-orange">automation edge</span>
           </h2>
           <p
             className="text-muted-foreground mb-8"
@@ -183,7 +183,7 @@ const WhyChooseUs = () => {
                 transitionDelay: `${i * 120}ms`
               }}
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-blue flex items-center justify-center mb-4 blue-glow">
+              <div className="w-10 h-10 rounded-xl bg-gradient-orange flex items-center justify-center mb-4 orange-glow">
                 <p.icon className="w-5 h-5 text-background" />
               </div>
               <h4 className="font-semibold mb-1">{p.title}</h4>
@@ -220,8 +220,8 @@ const Counter = ({ value, suffix = "+", label }: { value: number; suffix?: strin
     return () => obs.disconnect();
   }, [value]);
   return (
-    <div ref={ref} className="p-8 rounded-3xl glass-card text-center hover:blue-glow transition-all duration-500">
-      <div className="text-5xl md:text-6xl font-display font-bold text-gradient-blue mb-2">{n}{suffix}</div>
+    <div ref={ref} className="p-8 rounded-3xl glass-card text-center hover:orange-glow transition-all duration-500">
+      <div className="text-5xl md:text-6xl font-display font-bold text-gradient-orange mb-2">{n}{suffix}</div>
       <div className="text-sm text-muted-foreground uppercase tracking-widest">{label}</div>
     </div>
   );
@@ -305,7 +305,7 @@ const Testimonials = () => {
               </div>
               <p className="text-foreground/90 leading-relaxed mb-6">"{r.text}"</p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-blue flex items-center justify-center text-background font-bold blue-glow">
+                <div className="w-12 h-12 rounded-full bg-gradient-orange flex items-center justify-center text-background font-bold orange-glow">
                   {r.initial}
                 </div>
                 <div>

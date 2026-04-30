@@ -31,7 +31,7 @@ const socials = [
 const Footer = () => (
   <footer className="relative pt-12 pb-8">
     {/* top orange glow blob */}
-    <div className="absolute -top-32 right-0 w-[600px] h-[300px] bg-gradient-radial-blue opacity-30 blur-3xl pointer-events-none" />
+    <div className="absolute -top-32 right-0 w-[600px] h-[300px] bg-gradient-orange opacity-30 blur-3xl pointer-events-none" />
 
     <div className="container relative space-y-8">
       {/* === Main info card === */}
@@ -98,7 +98,7 @@ const Footer = () => (
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="w-14 h-14 rounded-full glass flex items-center justify-center hover:bg-gradient-blue hover:border-transparent hover:text-background transition-all duration-300"
+              className="w-14 h-14 rounded-full glass flex items-center justify-center hover:bg-gradient-orange hover:border-transparent hover:text-background transition-all duration-300"
             >
               <Icon className="w-5 h-5" />
             </a>

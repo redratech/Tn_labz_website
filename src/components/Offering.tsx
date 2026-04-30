@@ -103,12 +103,12 @@ const Offering = () => (
             Services
           </span>
           <h2 className="text-4xl md:text-6xl font-display font-bold leading-[1.05]">
-            What we are <span className="text-gradient-blue">offering</span>
+            What we are <span className="text-gradient-orange">offering</span>
           </h2>
         </div>
         <Link
           to="/services"
-          className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-gradient-blue text-background font-semibold text-sm uppercase tracking-wider blue-glow hover:scale-105 transition-transform self-start md:self-auto"
+          className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-gradient-orange text-background font-semibold text-sm uppercase tracking-wider orange-glow hover:scale-105 transition-transform self-start md:self-auto"
         >
           View All Services
           <ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform" />
@@ -124,7 +124,7 @@ const Offering = () => (
           >
             <div className="absolute -top-20 -right-20 w-56 h-56 bg-gradient-radial-blue opacity-0 group-hover:opacity-60 transition-opacity duration-500 blur-3xl" />
             <div className="relative">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-6 group-hover:bg-gradient-blue group-hover:border-transparent transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-6 group-hover:bg-gradient-orange group-hover:border-transparent transition-all duration-500">
                 <o.icon className="w-5 h-5 text-primary group-hover:text-background transition" />
               </div>
               <h3 className="text-xl md:text-2xl font-display font-semibold mb-4 leading-snug">
@@ -138,7 +138,7 @@ const Offering = () => (
                 className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-foreground group-hover:text-primary transition"
               >
                 Learn More
-                <span className="w-7 h-7 rounded-full bg-secondary border border-white/10 group-hover:bg-gradient-blue group-hover:border-transparent flex items-center justify-center transition-all duration-500">
+                <span className="w-7 h-7 rounded-full bg-secondary border border-white/10 group-hover:bg-gradient-orange group-hover:border-transparent flex items-center justify-center transition-all duration-500">
                   <ArrowUpRight className="w-3.5 h-3.5 text-primary group-hover:text-background transition" />
                 </span>
               </Link>
@@ -153,7 +153,7 @@ const Offering = () => (
           Brands Collaborations
         </span>
         <h3 className="text-3xl md:text-5xl font-display font-bold mb-12">
-          Brands that <span className="text-gradient-blue">trust us</span>
+          Brands that <span className="text-gradient-orange">trust us</span>
         </h3>
 
         <ScrollAnimation>

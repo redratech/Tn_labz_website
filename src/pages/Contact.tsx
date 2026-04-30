@@ -35,12 +35,12 @@ const Contact = () => {
                 rows={5}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full bg-secondary/60 border border-white/10 rounded-2xl px-5 py-4 text-foreground focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/20 transition"
+                className="w-full bg-secondary/60 border border-white/10 rounded-2xl px-5 py-4 text-foreground focus:outline-none focus:border-orange/60 focus:ring-2 focus:ring-orange/20 transition"
               />
             </div>
             <button 
               type="submit" 
-              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-gradient-blue text-background font-semibold blue-glow hover:scale-[1.02] transition"
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-gradient-orange text-background font-semibold orange-glow hover:scale-[1.02] transition"
             >
               Send Message <Send className="w-4 h-4" />
             </button>
@@ -58,7 +58,7 @@ const Contact = () => {
               key={c.t} 
               className="p-6 rounded-2xl glass-card glow-border-hover flex items-center gap-4 transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-2xl bg-gradient-blue flex items-center justify-center blue-glow shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-orange flex items-center justify-center orange-glow shrink-0">
                 <c.icon className="w-5 h-5 text-background" />
               </div>
               <div>

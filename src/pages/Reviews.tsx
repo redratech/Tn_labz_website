@@ -99,10 +99,10 @@ const Reviews = () => {
                 <img 
                   src={r.image} 
                   alt={r.name}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover blue-glow"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover orange-glow"
                 />
               ) : (
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-blue flex items-center justify-center text-background font-bold blue-glow text-sm sm:text-base">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-orange flex items-center justify-center text-background font-bold orange-glow text-sm sm:text-base">
                   {r.name[0]}
                 </div>
               )}

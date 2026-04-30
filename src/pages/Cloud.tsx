@@ -38,7 +38,7 @@ const Cloud = () => {
                 transitionDelay: `${i * 120}ms`
               }}
             >
-              <div className="text-2xl font-display font-bold text-gradient-blue mb-2">{c.t}</div>
+              <div className="text-2xl font-display font-bold text-gradient-orange mb-2">{c.t}</div>
               <p className="text-xs text-muted-foreground">{c.d}</p>
             </div>
           ))}

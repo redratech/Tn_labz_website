@@ -86,7 +86,7 @@ const Services = () => {
             <Link
               to={s.to}
               key={s.title}
-              className="group relative p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-white/10 border border-white/20 overflow-hidden transition-all duration-300 hover:border-primary/40 hover:bg-white/15"
+              className="group relative p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-white/10 border border-white/20 overflow-hidden transition-all duration-300 hover:border-orange/40 hover:bg-white/15"
               style={{ 
                 opacity: servicesSection.isVisible ? Math.min(Math.max(servicesSection.progress - 0.1 - (i * 0.05), 0) * 2, 1) : 0,
                 transform: `translateY(${servicesSection.isVisible ? (1 - servicesSection.progress) * 40 : 40}px)`,
@@ -94,12 +94,12 @@ const Services = () => {
               }}
             >
               <div className="relative">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-blue flex items-center justify-center mb-4 sm:mb-5">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-orange flex items-center justify-center mb-4 sm:mb-5">
                   <s.icon className="w-6 h-6 sm:w-7 sm:h-7 text-background" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-display font-bold mb-3 text-foreground">{s.title}</h3>
                 <p className="text-foreground/90 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5">{s.desc}</p>
-                <div className="inline-flex items-center gap-2 text-xs font-medium text-primary">
+                <div className="inline-flex items-center gap-2 text-xs font-medium text-orange">
                   Learn more <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 </div>
               </div>

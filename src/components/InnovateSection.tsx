@@ -83,13 +83,13 @@ const InnovateSection = () => {
               <div className="relative w-[350px] h-[350px] md:w-[400px] md:h-[400px]">
                 {/* prominent circle border */}
                 <div className="absolute inset-0 rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-background/20" />
-                <div className="absolute inset-8 rounded-full bg-gradient-radial-blue opacity-40 blur-3xl" />
+                <div className="absolute inset-8 rounded-full bg-gradient-orange opacity-40 blur-3xl" />
 
                 {/* word pills */}
                 {values.map((v, i) => (
                   <div
                     key={v.label}
-                    className="absolute left-1/2 top-1/2 px-4 py-2 rounded-full bg-gradient-blue text-background font-semibold text-sm md:text-base whitespace-nowrap shadow-lg flex items-center gap-2"
+                    className="absolute left-1/2 top-1/2 px-4 py-2 rounded-full bg-gradient-orange text-background font-semibold text-sm md:text-base whitespace-nowrap shadow-lg flex items-center gap-2"
                     style={{
                       transform: visible
                         ? `translate(calc(-50% + ${v.x}%), calc(-50% + ${v.y}%)) rotate(${v.rot}deg)`
@@ -107,7 +107,7 @@ const InnovateSection = () => {
           </div>
 
           {/* === RIGHT: Solid orange info card === */}
-          <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-blue p-6 md:p-8 flex flex-col justify-between min-h-[400px] lg:min-h-[480px] blue-glow">
+          <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-orange p-6 md:p-8 flex flex-col justify-between min-h-[400px] lg:min-h-[480px] orange-glow">
             {/* subtle texture overlay */}
             <div
               className="absolute inset-0 opacity-[0.08] pointer-events-none mix-blend-overlay"
@@ -132,7 +132,7 @@ const InnovateSection = () => {
               importance of amplifying our digital footprint in a competitive technology landscape.
               In collaboration with our expert content team, we crafted a comprehensive strategy
               that highlighted our pioneering work in <span className="font-semibold">RPA, AI,
-              AR/VR, and cloud services (AWS, Azure, Office 365)</span>. By leveraging targeted
+                AR/VR, and cloud services (AWS, Azure, Office 365)</span>. By leveraging targeted
               thought leadership, engaging content, and data-driven insights, we significantly
               enhanced our brand visibility and industry recognition.
             </p>

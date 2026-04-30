@@ -7,13 +7,13 @@ const BlogsSection = () => {
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
           {/* BLOGS tag */}
-          <span className="inline-block px-4 py-1.5 rounded-full bg-gradient-blue text-background text-xs uppercase tracking-widest font-semibold mb-6">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-gradient-orange text-background text-xs uppercase tracking-widest font-semibold mb-6">
             Blogs
           </span>
 
           {/* Main heading */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
-            Dive into our collection of <span className="text-gradient-blue">engaging blog posts</span>
+            Dive into our collection of <span className="text-gradient-orange">engaging blog posts</span>
           </h2>
 
           {/* Description */}
@@ -24,7 +24,7 @@ const BlogsSection = () => {
           {/* Read Blogs button */}
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-blue text-background font-semibold text-sm uppercase tracking-wider blue-glow hover:scale-105 transition-transform"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-orange text-background font-semibold text-sm uppercase tracking-wider orange-glow hover:scale-105 transition-transform"
           >
             Read Blogs <ArrowRight className="w-4 h-4" />
           </Link>
