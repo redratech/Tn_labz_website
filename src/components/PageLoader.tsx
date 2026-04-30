@@ -59,7 +59,7 @@ const PageLoader = () => {
         
         {/* Logo in center */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-8 h-8 rounded-lg bg-gradient-orange flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-gradient-blue flex items-center justify-center">
             <span className="text-background font-bold text-xs">TN</span>
           </div>
         </div>

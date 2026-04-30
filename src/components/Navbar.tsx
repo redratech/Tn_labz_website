@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import tnlabz from "@/assets/tnlabz new.png";
+import tnlabz from "@/assets/tnnew.jpeg";
 
 const links = [
   { to: "/", label: "Home" },
@@ -47,7 +47,7 @@ const Navbar = () => {
               />
             </div>
             <span className="font-display font-bold text-xl tracking-tight whitespace-nowrap">
-              TN <span className="text-gradient-orange">Labz</span>
+              TN <span className="text-gradient-blue">Labz</span>
             </span>
           </Link>
         </div>
@@ -60,7 +60,7 @@ const Navbar = () => {
             />
           </div>
           <span className="font-display font-bold text-xl tracking-tight">
-            TN <span className="text-gradient-orange">Labz</span>
+            TN <span className="text-gradient-blue">Labz</span>
           </span>
         </Link>
 
@@ -89,7 +89,7 @@ const Navbar = () => {
         {/* CTA */}
         <Link
           to="/contact"
-          className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-orange text-background font-semibold text-sm transition-all hover:scale-105 orange-glow"
+          className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-blue text-background font-semibold text-sm transition-all hover:scale-105 blue-glow"
         >
           Get Started
         </Link>
@@ -127,7 +127,7 @@ const Navbar = () => {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 text-center px-4 py-3 rounded-2xl bg-gradient-orange text-background font-semibold"
+              className="mt-2 text-center px-4 py-3 rounded-2xl bg-gradient-blue text-background font-semibold"
             >
               Get Started
             </Link>

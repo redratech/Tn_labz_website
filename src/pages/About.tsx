@@ -161,7 +161,7 @@ const About = () => {
         <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-foreground">
-              Hey There! Welcome to <span className="text-gradient-orange">Technolabz Business Solutions!</span>
+              Hey There! Welcome to <span className="text-gradient-blue">Technolabz Business Solutions!</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
               A multidisciplinary team of engineers, data scientists, and designers — building automation with craft.
@@ -198,7 +198,7 @@ const About = () => {
                   className="w-full px-6 py-5 flex items-center justify-between text-left"
                 >
                   <div className="flex items-center gap-3 pr-4">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-orange flex items-center justify-center text-background font-bold text-sm flex-shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-blue flex items-center justify-center text-background font-bold text-sm flex-shrink-0">
                       {info.number}
                     </div>
                     <span className="text-foreground font-semibold text-base md:text-lg">
@@ -206,7 +206,7 @@ const About = () => {
                     </span>
                   </div>
                   <div
-                    className={`flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-orange flex items-center justify-center transition-transform duration-300 ${
+                    className={`flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-blue flex items-center justify-center transition-transform duration-300 ${
                       openIndex === index ? "rotate-180" : ""
                     }`}
                   >
@@ -264,28 +264,28 @@ const About = () => {
             {/* Founder Qualities */}
             <div className="grid grid-cols-2 gap-3 pt-4">
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-center">
-                <div className="w-10 h-10 rounded-lg bg-gradient-orange flex items-center justify-center mx-auto mb-2">
+                <div className="w-10 h-10 rounded-lg bg-gradient-blue flex items-center justify-center mx-auto mb-2">
                   <Target className="w-5 h-5 text-background" />
                 </div>
                 <h4 className="font-semibold text-foreground text-xs mb-1">Visionary Thinker</h4>
               </div>
               
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-center">
-                <div className="w-10 h-10 rounded-lg bg-gradient-orange flex items-center justify-center mx-auto mb-2">
+                <div className="w-10 h-10 rounded-lg bg-gradient-blue flex items-center justify-center mx-auto mb-2">
                   <Heart className="w-5 h-5 text-background" />
                 </div>
                 <h4 className="font-semibold text-foreground text-xs mb-1">Empathetic Leader</h4>
               </div>
               
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-center">
-                <div className="w-10 h-10 rounded-lg bg-gradient-orange flex items-center justify-center mx-auto mb-2">
+                <div className="w-10 h-10 rounded-lg bg-gradient-blue flex items-center justify-center mx-auto mb-2">
                   <Sparkles className="w-5 h-5 text-background" />
                 </div>
                 <h4 className="font-semibold text-foreground text-xs mb-1">Creative Problem-Solver</h4>
               </div>
               
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-center">
-                <div className="w-10 h-10 rounded-lg bg-gradient-orange flex items-center justify-center mx-auto mb-2">
+                <div className="w-10 h-10 rounded-lg bg-gradient-blue flex items-center justify-center mx-auto mb-2">
                   <Star className="w-5 h-5 text-background" />
                 </div>
                 <h4 className="font-semibold text-foreground text-xs mb-1">Passionate Mentor</h4>
@@ -351,7 +351,7 @@ const About = () => {
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-orange flex items-center justify-center text-background font-bold text-lg mb-2">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-blue flex items-center justify-center text-background font-bold text-lg mb-2">
                     {item.step}
                   </div>
                   <div className="text-xs text-foreground/60 uppercase tracking-widest text-center">Step</div>

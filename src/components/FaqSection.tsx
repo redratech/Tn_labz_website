@@ -44,13 +44,13 @@ const FaqSection = () => {
       <div className="container">
         <div className="max-w-4xl mx-auto">
           {/* FAQ tag */}
-          <span className="inline-block px-4 py-1.5 rounded-full bg-gradient-orange text-background text-xs uppercase tracking-widest font-semibold mb-6">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-gradient-blue text-background text-xs uppercase tracking-widest font-semibold mb-6">
             Frequently Asked Questions
           </span>
 
           {/* Main heading */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-12">
-            Got Questions? We've Got <span className="text-gradient-orange">Answers!</span>
+            Got Questions? We've Got <span className="text-gradient-blue">Answers!</span>
           </h2>
 
           {/* FAQ items */}
@@ -68,7 +68,7 @@ const FaqSection = () => {
                     {faq.question}
                   </span>
                   <div
-                    className={`flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-orange flex items-center justify-center transition-transform duration-300 ${
+                    className={`flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-blue flex items-center justify-center transition-transform duration-300 ${
                       openIndex === index ? "rotate-180" : ""
                     }`}
                   >

@@ -94,7 +94,7 @@ const Services = () => {
               }}
             >
               <div className="relative">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-orange flex items-center justify-center mb-4 sm:mb-5">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-blue flex items-center justify-center mb-4 sm:mb-5">
                   <s.icon className="w-6 h-6 sm:w-7 sm:h-7 text-background" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-display font-bold mb-3 text-foreground">{s.title}</h3>

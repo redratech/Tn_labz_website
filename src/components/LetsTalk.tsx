@@ -24,7 +24,7 @@ const LetsTalk = () => {
             "repeating-linear-gradient(90deg, hsl(var(--foreground)) 0 1px, transparent 1px 80px)",
         }}
       />
-      <div className="absolute -left-40 top-1/3 w-[500px] h-[500px] bg-gradient-radial-orange opacity-25 blur-3xl pointer-events-none" />
+      <div className="absolute -left-40 top-1/3 w-[500px] h-[500px] bg-gradient-radial-blue opacity-25 blur-3xl pointer-events-none" />
 
       <div className="container relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -32,7 +32,7 @@ const LetsTalk = () => {
           <div>
             <h2 className="font-display font-black leading-[0.85] tracking-tight text-7xl md:text-8xl lg:text-[10rem]">
               <span className="block text-foreground">Let's</span>
-              <span className="block text-gradient-orange">Talk!</span>
+              <span className="block text-gradient-blue">Talk!</span>
             </h2>
             <p className="mt-8 text-muted-foreground text-lg max-w-md">
               Have a project, idea, or question? Drop us a line — we typically reply within
@@ -80,7 +80,7 @@ const LetsTalk = () => {
 
             <button
               type="submit"
-              className="w-full py-4 rounded-2xl bg-gradient-orange text-background font-display font-bold text-lg orange-glow hover:scale-[1.02] transition-transform"
+              className="w-full py-4 rounded-2xl bg-gradient-blue text-background font-display font-bold text-lg blue-glow hover:scale-[1.02] transition-transform"
             >
               Submit
             </button>

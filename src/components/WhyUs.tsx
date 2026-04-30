@@ -29,7 +29,7 @@ const Counter = ({ value, suffix = "+", label }: { value: number; suffix?: strin
   return (
     <div ref={ref} className="relative group">
       {/* circular glow blob */}
-      <div className="absolute inset-0 rounded-full bg-gradient-radial-orange opacity-50 blur-2xl group-hover:opacity-80 transition-opacity duration-500" />
+      <div className="absolute inset-0 rounded-full bg-gradient-radial-blue opacity-50 blur-2xl group-hover:opacity-80 transition-opacity duration-500" />
       <div className="relative flex flex-col items-center justify-center aspect-square rounded-full border border-white/10 backdrop-blur-md bg-background/30 p-6 text-center group-hover:border-primary/40 transition">
         <div className="text-5xl md:text-6xl font-display font-bold text-foreground">
           {n}{suffix}
@@ -143,7 +143,7 @@ const WhyUs = () => {
         loading="lazy"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
-      <div className="absolute inset-0 bg-gradient-radial-orange opacity-20 blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-radial-blue opacity-20 blur-3xl" />
 
       <div className="container relative">
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -151,7 +151,7 @@ const WhyUs = () => {
             Why Choose Us
           </span>
           <h2 className="text-4xl md:text-6xl font-display font-bold leading-[1.05]">
-            Numbers that <span className="text-gradient-orange">speak</span>
+            Numbers that <span className="text-gradient-blue">speak</span>
           </h2>
         </div>
 
@@ -173,9 +173,9 @@ const WhyUs = () => {
               key={f.title}
               className="group relative p-10 rounded-3xl glass-card glow-border-hover text-center overflow-hidden"
             >
-              <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-radial-orange opacity-0 group-hover:opacity-50 transition-opacity duration-500 blur-3xl" />
+              <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-radial-blue opacity-0 group-hover:opacity-50 transition-opacity duration-500 blur-3xl" />
               <div className="relative">
-                <div className="w-16 h-16 mx-auto rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-6 group-hover:bg-gradient-orange group-hover:border-transparent transition-all duration-500">
+                <div className="w-16 h-16 mx-auto rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-6 group-hover:bg-gradient-blue group-hover:border-transparent transition-all duration-500">
                   <f.icon className="w-7 h-7 text-primary group-hover:text-background transition" />
                 </div>
                 <h3 className="text-2xl font-display font-semibold mb-4">{f.title}</h3>
@@ -234,7 +234,7 @@ const WhyUs = () => {
                 "{t.text}"
               </p>
               <div className="flex items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-white/20">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-orange flex items-center justify-center text-background font-bold orange-glow text-sm sm:text-base">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-blue flex items-center justify-center text-background font-bold blue-glow text-sm sm:text-base">
                   {t.initial}
                 </div>
                 <div>
@@ -252,7 +252,7 @@ const WhyUs = () => {
       <div className="text-center mt-12">
         <Link
           to="/reviews"
-          className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-orange text-background font-semibold text-sm uppercase tracking-wider orange-glow hover:scale-105 transition-transform"
+          className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-blue text-background font-semibold text-sm uppercase tracking-wider blue-glow hover:scale-105 transition-transform"
         >
           View All Reviews
           <ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform" />

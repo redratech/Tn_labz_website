@@ -22,7 +22,7 @@ const AI = () => {
             transform: `translateY(${introSection.isVisible ? (1 - introSection.progress) * 30 : 30}px)`
           }}
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Intelligence, <span className="text-gradient-orange">engineered.</span></h2>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Intelligence, <span className="text-gradient-blue">engineered.</span></h2>
           <p 
             className="text-muted-foreground"
             style={{ 
@@ -62,7 +62,7 @@ const AI = () => {
               transitionDelay: `${i * 120}ms`
             }}
           >
-            <div className="w-12 h-12 rounded-2xl bg-gradient-orange flex items-center justify-center mb-4 orange-glow">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-blue flex items-center justify-center mb-4 blue-glow">
               <s.icon className="w-6 h-6 text-background" />
             </div>
             <h4 className="font-display font-semibold text-lg mb-2">{s.t}</h4>
