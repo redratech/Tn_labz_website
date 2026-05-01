@@ -46,10 +46,7 @@ const Navbar = () => {
                 className="w-10 h-10 rounded-xl object-cover transition-transform group-hover:scale-110"
               />
             </div>
-            <span className="font-display font-bold text-xl tracking-tight whitespace-nowrap">
-              TN <span className="text-gradient-orange">Labz</span>
-            </span>
-          </Link>
+                      </Link>
         </div>
         <Link to="/" className={cn("hidden lg:flex items-center gap-2 group")}>
           <div className="relative">
@@ -59,10 +56,7 @@ const Navbar = () => {
               className="w-10 h-10 rounded-xl object-cover transition-transform group-hover:scale-110"
             />
           </div>
-          <span className="font-display font-bold text-xl tracking-tight">
-            TN <span className="text-gradient-orange">Labz</span>
-          </span>
-        </Link>
+                  </Link>
 
         {/* Desktop pill nav */}
         <nav className="hidden lg:flex items-center gap-1 px-2 py-2 rounded-full glass">

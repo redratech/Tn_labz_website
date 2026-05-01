@@ -4,14 +4,30 @@ import PageHero from "@/components/PageHero";
 import { Phone, Mail, MapPin, Send, Building } from "lucide-react";
 import { toast } from "sonner";
 import home from "@/assets/home.jpg";
+import { sendEmail } from "@/utils/emailjs";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thanks! We'll be in touch shortly.");
-    setForm({ name: "", email: "", phone: "", message: "" });
+    
+    if (!form.name || !form.email || !form.message) {
+      toast.error("Please fill all required fields");
+      return;
+    }
+
+    try {
+      const success = await sendEmail(form);
+      if (success) {
+        toast.success("Message sent successfully! We'll be in touch shortly.");
+        setForm({ name: "", email: "", phone: "", message: "" });
+      } else {
+        toast.error("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again.");
+    }
   };
 
   return (

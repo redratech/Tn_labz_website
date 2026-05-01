@@ -1,17 +1,28 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { sendEmail } from "@/utils/emailjs";
 
 const LetsTalk = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
-      toast.error("Please fill all fields");
+      toast.error("Please fill all required fields");
       return;
     }
-    toast.success("Thanks! We'll get back to you shortly.");
-    setForm({ name: "", email: "", message: "" });
+
+    try {
+      const success = await sendEmail(form);
+      if (success) {
+        toast.success("Message sent successfully! We'll get back to you shortly.");
+        setForm({ name: "", email: "", phone: "", message: "" });
+      } else {
+        toast.error("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again.");
+    }
   };
 
   return (
@@ -63,6 +74,17 @@ const LetsTalk = () => {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 placeholder="Enter your email"
+                className="w-full px-6 py-4 rounded-2xl bg-secondary/60 border border-white/10 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/20 transition"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold mb-3">Phone</label>
+              <input
+                type="tel"
+                value={form.phone}
+                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                placeholder="Enter your phone number"
                 className="w-full px-6 py-4 rounded-2xl bg-secondary/60 border border-white/10 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/20 transition"
               />
             </div>

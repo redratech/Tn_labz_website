@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Contact Form Submission</title>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0B0B0B;
+            color: #FAFAFA;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, rgba(20, 20, 20, 0.8), rgba(10, 10, 10, 0.6));
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            backdrop-filter: blur(20px);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF7A00;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #FF7A00, #FFB347);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            color: #A0A0A0;
+            font-size: 16px;
+        }
+        .content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        .field {
+            margin-bottom: 20px;
+        }
+        .field-label {
+            font-weight: 600;
+            color: #FF7A00;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        .field-value {
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border-left: 3px solid #FF7A00;
+        }
+        .message-field {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 3px solid #FF7A00;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #A0A0A0;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #FF7A00;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">TN Labz</div>
+            <div class="title">New Contact Form Submission</div>
+            <div class="subtitle">Business Solutions - Automation & AI Services</div>
+        </div>
+        
+        <div class="content">
+            <div class="field">
+                <div class="field-label">Name</div>
+                <div class="field-value">{{name}}</div>
+            </div>
+            
+            <div class="field">
+                <div class="field-label">Email</div>
+                <div class="field-value">{{email}}</div>
+            </div>
+            
+            <div class="field">
+                <div class="field-label">Phone</div>
+                <div class="field-value">{{phone}}</div>
+            </div>
+            
+            <div class="field">
+                <div class="field-label">Message</div>
+                <div class="message-field">{{message}}</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>This message was sent from the TN Labz website contact form.</p>
+            <p>Visit us at: <a href="https://tnlabz.com">tnlabz.com</a></p>
+            <p>© {{year}} TN Labz Business Solutions. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
